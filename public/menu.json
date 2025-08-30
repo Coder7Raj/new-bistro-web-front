@@ -108,7 +108,7 @@
     "name": "Haddock",
     "recipe": "Chargrilled fresh tuna steak (served medium rare) on classic Niçoise salad.",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-    "category": "dessert",
+    "category": "offered",
     "price": 14.7
   },
   {
@@ -148,7 +148,7 @@
     "name": "Escalope de Veau",
     "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée.",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-    "category": "dessert",
+    "category": "offered",
     "price": 12.5
   },
   {
@@ -172,7 +172,7 @@
     "name": "Roast Duck Breast",
     "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce.",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-    "category": "dessert",
+    "category": "soup",
     "price": 14.5
   },
   {
@@ -180,7 +180,7 @@
     "name": "Escalope de Veau",
     "recipe": "Pan roasted pork belly with gratin potato, braised Savoy cabbage, apple and a cider jus.",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-    "category": "dessert",
+    "category": "offered",
     "price": 13.5
   },
   {
@@ -188,7 +188,7 @@
     "name": "Escalope de Veau",
     "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée.",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-    "category": "dessert",
+    "category": "soup",
     "price": 12.5
   },
   {
@@ -204,7 +204,7 @@
     "name": "Escalope de Veau",
     "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée.",
     "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
-    "category": "dessert",
+    "category": "offered",
     "price": 12.5
   }
 ]

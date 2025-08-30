@@ -11,13 +11,13 @@ export default function Navbar() {
         <Link to="/menu">Menu</Link>
       </li>
       <li>
-        <a>Item 3</a>
+        <Link to="/order">Order Food</Link>
       </li>
     </>
   );
   return (
     <>
-      <section className="navbar bg-white text-black">
+      <section className="navbar bg-white fixed bg-opacity-35 font-bold text-black max-w-screen-xl mx-auto z-30">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

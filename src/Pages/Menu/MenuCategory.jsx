@@ -1,6 +1,7 @@
 import React from "react";
 import MenuItem from "../Shared/MenuItem";
 import Cover from "../Shared/Cover";
+import { Link } from "react-router-dom";
 
 export default function MenuCategory({ items, img, title, subtitle }) {
   return (
@@ -11,6 +12,11 @@ export default function MenuCategory({ items, img, title, subtitle }) {
           <MenuItem key={item._id} item={item} />
         ))}
       </div>
+      <Link to={`/order/${title}`} className="flex justify-center p-2 mt-8">
+        <button className="btn border-0 border-b-2 border-white">
+          View More
+        </button>
+      </Link>
     </section>
   );
 }

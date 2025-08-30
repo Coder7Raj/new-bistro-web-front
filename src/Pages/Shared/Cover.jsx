@@ -3,7 +3,7 @@ import React from "react";
 export default function Cover({ img, title, subtitle }) {
   return (
     <section
-      className="hero h-[450px] flex justify-center items-center mt-10"
+      className="hero h-[450px] flex justify-center items-center"
       style={{
         backgroundImage: `url("${img}")`,
       }}
