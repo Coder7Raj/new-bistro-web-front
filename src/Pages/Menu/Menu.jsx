@@ -34,7 +34,7 @@ export default function Menu() {
       ></SectionTittle>
       <MenuCategory
         items={salad}
-        title={"Salad"}
+        title={"salad"}
         subtitle={"Fresh and Healthy"}
         img={saladCover}
       ></MenuCategory>
@@ -42,7 +42,7 @@ export default function Menu() {
 
       <MenuCategory
         items={dessert}
-        title={"Dessert"}
+        title={"dessert"}
         subtitle={"Sweet and Delicious"}
         img={dessertCover}
       ></MenuCategory>
@@ -51,7 +51,7 @@ export default function Menu() {
 
       <MenuCategory
         items={pizza}
-        title={"Pizza"}
+        title={"pizza"}
         subtitle={"Cheesy and Delicious"}
         img={pizzaCover}
       ></MenuCategory>
@@ -59,7 +59,7 @@ export default function Menu() {
 
       <MenuCategory
         items={soup}
-        title={"Soup"}
+        title={"soup"}
         subtitle={"Warm and Comforting"}
         img={soupCover}
       ></MenuCategory>

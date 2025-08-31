@@ -9,8 +9,8 @@ import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
 export default function OrderFood() {
-  const { category } = useParams();
   const categories = ["pizza", "soup", "salad", "dessert", "offered"];
+  const { category } = useParams();
   const initialIndex = categories.indexOf(category);
   const [tabIndex, setTabIndex] = useState(initialIndex);
   const [menu] = useMenu();
