@@ -13,6 +13,9 @@ export default function Navbar() {
       <li>
         <Link to="/order">Order Food</Link>
       </li>
+      <li>
+        <Link to="/user_login">Login</Link>
+      </li>
     </>
   );
   return (
