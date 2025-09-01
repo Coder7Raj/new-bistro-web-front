@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import registerImg from "../../assets/others/authentication2.png";
 import registerBG from "../../assets/others/authentication.png";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Register() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    phone: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      toast.error("Something was wrong !");
+      return;
+    }
+    console.log("Register Data:", formData); // 👉 send this to backend
+  };
   return (
     <section className="min-h-screen w-full flex items-center justify-center">
       <div
@@ -32,7 +59,8 @@ export default function Register() {
           <p className="text-gray-500 mb-8 text-center">
             Please Register to continue
           </p>
-          <form className="space-y-5">
+          {/* input  form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email */}
             <div>
               <label
@@ -44,12 +72,14 @@ export default function Register() {
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
                 placeholder="Enter your email"
               />
             </div>
 
-            {/* Password */}
+            {/* Password with eye toggle */}
             <div>
               <label
                 htmlFor="password"
@@ -57,28 +87,49 @@ export default function Register() {
               >
                 Password
               </label>
-              <input
-                type="password"
-                id="password"
-                className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
-                placeholder="Enter your password"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  className="w-full px-4 py-2 rounded-lg pr-10 bg-white text-black border border-gray-300 shadow-sm outline-none"
+                  placeholder="Enter your password"
+                  required
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500 hover:text-gray-700"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
             </div>
 
-            {/* Confirm Password */}
+            {/* Password with eye toggle */}
             <div>
               <label
-                htmlFor="confirm-password"
+                htmlFor="password"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
                 Confirm Password
               </label>
-              <input
-                type="password"
-                id="confirm-password"
-                className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
-                placeholder="Re-enter your password"
-              />
+              <div className="relative">
+                <input
+                  type={confirmPassword ? "text" : "password"}
+                  id="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 rounded-lg pr-10 bg-white text-black border border-gray-300 shadow-sm outline-none"
+                  placeholder="Enter your password"
+                  required
+                />
+                <span
+                  onClick={() => setConfirmPassword(!confirmPassword)}
+                  className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500 hover:text-gray-700"
+                >
+                  {confirmPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
             </div>
 
             {/* Phone */}
@@ -92,6 +143,8 @@ export default function Register() {
               <input
                 type="text"
                 id="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
                 placeholder="Enter your phone number"
               />
