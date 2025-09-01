@@ -1,7 +1,7 @@
 import React from "react";
+import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import loginImg from "../../assets/others/authentication2.png";
 import loginBG from "../../assets/others/authentication.png";
-import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Login() {
@@ -13,24 +13,15 @@ export default function Login() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="w-full flex flex-col md:flex-row overflow-hidden"
+        className="min-h-screen w-full flex justify-center flex-col md:flex-row overflow-hidden"
       >
-        {/* Left Image */}
-        <div className="hidden md:flex items-center justify-center p-6">
-          <img
-            src={loginImg}
-            alt="Login Illustration"
-            className="object-contain"
-          />
-        </div>
-
-        {/* Right Form */}
+        {/* left side */}
         <div className="p-8 flex flex-col justify-center shadow-xl">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            Welcome To Bistro Boss 👋
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
+            Login
           </h1>
           <p className="text-gray-500 mb-8 text-center">
-            Please Register in to continue
+            Please Login to continue
           </p>
           <form className="space-y-5">
             {/* Email */}
@@ -44,7 +35,7 @@ export default function Login() {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
+                className="w-full px-4 py-2 border bg-white text-black border-gray-300 rounded-lg shadow-sm outline-none"
                 placeholder="Enter your email"
               />
             </div>
@@ -60,40 +51,8 @@ export default function Login() {
               <input
                 type="password"
                 id="password"
-                className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
+                className="w-full px-4 py-2 border border-gray-300 bg-white text-black rounded-lg shadow-sm outline-none"
                 placeholder="Enter your password"
-              />
-            </div>
-
-            {/* Confirm Password */}
-            <div>
-              <label
-                htmlFor="confirm-password"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                id="confirm-password"
-                className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
-                placeholder="Re-enter your password"
-              />
-            </div>
-
-            {/* Phone */}
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Phone
-              </label>
-              <input
-                type="text"
-                id="phone"
-                className="w-full px-4 py-2 bg-white text-black border border-gray-300 rounded-lg shadow-sm outline-none"
-                placeholder="Enter your phone number"
               />
             </div>
 
@@ -102,10 +61,10 @@ export default function Login() {
               type="submit"
               className="w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300"
             >
-              Sign Up
+              Login
             </button>
           </form>
-          {/* Social Logins */}
+          {/* Social Login */}
           <div className="mt-8">
             <div className="flex items-center justify-center">
               <span className="h-px w-16 bg-gray-300"></span>
@@ -116,31 +75,40 @@ export default function Login() {
             </div>
 
             <div className="flex justify-center gap-4 mt-6">
-              <button className="flex items-center justify-center gap-2 w-36 px-4 py-2 text-black border rounded-lg shadow-sm hover:bg-gray-50 transition">
+              <button className="flex items-center justify-center gap-2 px-4 py-2 border rounded-lg shadow-sm hover:bg-gray-50 transition">
                 <FaGoogle className="text-red-500" /> Google
               </button>
-              <button className="flex items-center justify-center gap-2 w-36 px-4 py-2 text-black border rounded-lg shadow-sm hover:bg-gray-50 transition">
+              <button className="flex items-center justify-center gap-2 px-4 py-2 border rounded-lg shadow-sm hover:bg-gray-50 transition">
                 <FaFacebook className="text-blue-600" /> Facebook
               </button>
-              <button className="flex items-center justify-center gap-2 w-36 px-4 py-2 text-black border rounded-lg shadow-sm hover:bg-gray-50 transition">
-                <FaGithub className="text-black" /> GitHub
+              <button className="flex items-center justify-center gap-2 px-4 py-2 border rounded-lg shadow-sm hover:bg-gray-50 transition">
+                <FaGithub className="text-gray-800" /> GitHub
               </button>
             </div>
           </div>
+          {/* Extra links */}
           <p className="text-center text-sm text-gray-500 mt-6">
-            Already have an account?
-            <Link to={"/"} className="text-indigo-600 hover:underline">
-              Sign in
+            Don't have an account?{" "}
+            <Link
+              to={"/user_register"}
+              className="text-indigo-600 hover:underline"
+            >
+              Sign up
             </Link>
           </p>
-          <div className="mt-8">
-            <button
-              onClick={() => (window.location.href = "/")}
-              className="w-full bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg shadow-sm hover:bg-gray-300 transition-all duration-300"
-            >
+          <p className="text-center text-sm text-gray-500 mt-2">
+            <Link to={"/"} className="text-gray-700 hover:underline">
               Go to Home
-            </button>
-          </div>
+            </Link>
+          </p>
+        </div>
+        {/* right side */}
+        <div className="hidden md:flex items-center justify-center p-6">
+          <img
+            src={loginImg}
+            alt="Register Illustration"
+            className="h-full w-full object-contain"
+          />
         </div>
       </div>
     </section>

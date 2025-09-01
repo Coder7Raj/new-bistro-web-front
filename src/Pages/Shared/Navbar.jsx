@@ -14,6 +14,9 @@ export default function Navbar() {
         <Link to="/order">Order Food</Link>
       </li>
       <li>
+        <Link to="/user_register">Register</Link>
+      </li>
+      <li>
         <Link to="/user_login">Login</Link>
       </li>
     </>
